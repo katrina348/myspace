@@ -8,7 +8,8 @@ class Api::PhysiciansController < ApplicationController
     end
 
     def show
-      render json: @physician
+      # render json: @physician
+      render json: @physician.get_patients_with_physicians
     end
 
     def create

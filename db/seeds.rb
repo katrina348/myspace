@@ -5,17 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Physician.destroy_all
+Patient.destroy_all
+Appointment.destroy_all
 require 'faker'
 
+spoderman = Patient.create(name:'P. Spoderman')
+pibb = Patient.create(name:'Mr. Pibb')
+dahlek = Patient.create(name:'D. Ahlek')
 
-andrew = Patient.create(name:'Andrew')
-skyler = Patient.create(name:'Skyler')
-lilly = Patient.create(name:'Lilly')
+octopus = Physician.create(name:'Octopus')
+pepper = Physician.create(name:'Pepper')
+whomst = Physician.create(name:'Whomst')
 
-bob = Physician.create(name:'Bob')
-dick = Physician.create(name:'Dick')
-harry = Physician.create(name:'Harry')
-
-Appointment.create(physician_id: bob.id, patient_id: andrew.id, date: Faker::Date.between(from: '2021-09-23', to: '2025-09-25'))
-Appointment.create(physician_id: dick.id, patient_id: skyler.id, date: Faker::Date.between(from: '2021-09-23', to: '2025-09-25'))
-Appointment.create(physician_id: harry.id, patient_id: lilly.id, date: Faker::Date.between(from: '2021-09-23', to: '2025-09-25'))
+Appointment.create(physician_id: octopus.id, patient_id: spoderman.id, date: Faker::Date.between(from: '2021-09-23', to: '2025-09-25'))
+Appointment.create(physician_id: pepper.id, patient_id: pibb.id, date: Faker::Date.between(from: '2021-09-23', to: '2025-09-25'))
+Appointment.create(physician_id: whomst.id, patient_id: dahlek.id, date: Faker::Date.between(from: '2021-09-23', to: '2025-09-25'))

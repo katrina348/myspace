@@ -1,7 +1,7 @@
 
 import React from "react";
 import "./App.css";
-// import { Container } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
@@ -19,7 +19,7 @@ import PatientShow from "./pages/PatientShow";
       return (
         <>
           <NavBar/>
-          {/* <Container> */}
+          <Container>
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route exact path="/about" component={About} />
@@ -30,11 +30,8 @@ import PatientShow from "./pages/PatientShow";
               <Route exact path="/appointments" component={Appointments} />
               <Route exact path="/patients" component={Patients} />
               <Route exact path="/patients/:id" component={PatientShow} />
-
-
-
             </Switch>
-          {/* </Container> */}
+          </Container>
         </>
       );
     }

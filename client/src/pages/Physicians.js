@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ErrorMessage from '../components/ErrorMessage'
 import List from '../components/List'
 import Spinner from '../components/Spinner'
@@ -17,9 +18,9 @@ const Physicians = ()=>{
             <List 
             renderData={(physician)=>{
               return (
-              <div>
+              <Link to={`/physicians/${physician.id}`}>
                 <h1>{physician.name}</h1>
-              </div>
+              </Link>
               )
             }}
             data={data} 

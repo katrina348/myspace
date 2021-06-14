@@ -1,9 +1,9 @@
 import React from 'react'
 import ErrorMessage from '../components/ErrorMessage'
-import List from '../components/List'
 import Spinner from '../components/Spinner'
+import List from '../components/List'
 import useAxiosOnMount from '../customHooks/useAxiosOnMount'
-
+import Patient from './Patient'
 
 const Patients = ()=>{
     // about the useState hook
@@ -15,15 +15,9 @@ const Patients = ()=>{
     return (
         <div>
             <List 
-            renderData={(patient)=>{
-              return (
-              <div>
-                <h1>{patient.name}</h1>
-              </div>
-              )
-            }}
-            data={data} 
-            name='Patients'/>
+               renderData={(patient) => <Patient {...patient}/>}
+               data={data} 
+               name='Patients'/>
         </div>
     )
 }
