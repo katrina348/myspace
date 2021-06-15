@@ -18,7 +18,7 @@ const Physicians = ()=>{
             <List 
             renderData={(physician)=>{
               return (
-              <Link to={`/physicians/${physician.id}`}>
+              <Link key={physician.id} to={`/physicians/${physician.id}`}>
                 <h1>{physician.name}</h1>
               </Link>
               )
