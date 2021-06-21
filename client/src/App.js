@@ -5,7 +5,8 @@ import { Container } from "semantic-ui-react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
     function App() {
       return (
@@ -14,7 +15,8 @@ import About from "./pages/About";
           <Container>
             <Switch>
               <Route exact path="/" component={Home}/>
-              <Route exact path="/about" component={About} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
             </Switch>
           </Container>
         </>
