@@ -1,16 +1,25 @@
 import React, {useState} from 'react'
-
+import axios from 'axios'
 export const AuthContext = React.createContext()
-
 export const AuthConsumer = AuthContext.Consumer
 
 const AuthProvider = (props) => {
   const [user, setUser] = useState(null)
 
-  const handleRegister = () => {}
-
+  const handleRegister = async (userFormData, history) => {
+    try {
+      let res = await axios.post('api/auth', userFormData)
+      console.log(res)
+      setUser(res.data.data)
+      history.push('/')
+    } catch (err) {
+      console.log(err)
+      console.log(err.response)
+    }
+      console.log(userFormData)
+  }
+  
   const handleLogin = () => {}
-
   const handleLogout = () => {}
 
   return (
