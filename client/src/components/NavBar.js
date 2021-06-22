@@ -1,16 +1,18 @@
 import React, {useContext} from "react";
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation, useHistory } from "react-router-dom"
 import { Menu } from "semantic-ui-react";
 import { AuthContext } from "../providers/AuthProvider";
 
+
 const NavBar =()=>{
   const {pathname} = useLocation()
-  const {authenticated} = useContext(AuthContext)
+  const history = useHistory()
+  const {authenticated, handleLogout} = useContext(AuthContext)
   const getRightNav = () =>{
     if(authenticated){
       return (
       <Menu.Menu position='right' >
-        <Menu.Item>Logout</Menu.Item>
+        <Menu.Item onClick={() => handleLogout(history)}>Logout</Menu.Item>
       </Menu.Menu>
       )
     }else{
