@@ -5,7 +5,7 @@ export const AuthConsumer = AuthContext.Consumer
 
 const AuthProvider = (props) => {
   const [user, setUser] = useState(null)
-
+//new
   const handleRegister = async (userFormData, history) => {
     try {
       let res = await axios.post('api/auth', userFormData)
@@ -18,7 +18,7 @@ const AuthProvider = (props) => {
       console.log(err.response)
     }
   }
-  
+//login
   const handleLogin = async (userFormData, history) => {
     try {
       let res = await axios.post('api/auth/sign_in', userFormData)
@@ -31,7 +31,7 @@ const AuthProvider = (props) => {
       console.log(err.response)
     }
   }
-  
+//logout
   const handleLogout = async (history) => {
     console.log('handleLogout called')
     try {
@@ -48,12 +48,12 @@ const AuthProvider = (props) => {
 
   return (
     <AuthContext.Provider value={{
-      testValue: 'test value',
       user,
       authenticated: user !== null,
       handleRegister,
       handleLogin,
       handleLogout,
+      setUser
     }}>
     {props.children}
     </AuthContext.Provider>

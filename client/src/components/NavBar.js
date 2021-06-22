@@ -18,12 +18,12 @@ const NavBar =()=>{
     }else{
       return (
         <Menu.Menu position = 'right'>
-                <Link to="/register">
-          <Menu.Item active={pathname === '/register'}>Register</Menu.Item>
-        </Link>
-        <Link to="/login">
-          <Menu.Item active={pathname === '/login'}>Login</Menu.Item>
-        </Link>
+          <Link to="/register">
+            <Menu.Item active={pathname === '/register'}>Register</Menu.Item>
+          </Link>
+          <Link to="/login">
+            <Menu.Item active={pathname === '/login'}>Login</Menu.Item>
+          </Link>
         </Menu.Menu>
       )
     }

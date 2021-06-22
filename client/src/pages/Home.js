@@ -1,12 +1,14 @@
-import React, {useState, useEffect} from 'react'
-import App from '../App'
+import React, {useState, useEffect, useContext} from 'react'
+import { AuthContext } from '../providers/AuthProvider'
+
 
 const Home = () => {
+  const {user} = useContext(AuthContext)
   return(
     <div>
-      <h1>
-        Home
-      </h1>
+      <h1>Home</h1>
+      <p>{user ? user.email : "No  user"}</p>
+      <p>{localStorage.getItem('access-token')}</p>
     </div>
   )
 }
